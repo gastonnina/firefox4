@@ -1,14 +1,86 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Curso Firefox Os v4 - Miriadax - gastonnina - Homework</title>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso Firefox Os v4 - Miriadax - gastonnina - Homework</title>
+        <style>
+            @keyframes demo-skew
+            {
+                from {transform: skew(0deg, 0deg);}
+                10% {transform: skew(0deg, 0deg);}
+                30% {transform: skew(20deg, 0deg);}
+                50% {transform: skew(-20deg, 0deg);}
+                70% {transform: skew(20deg, 20deg);}
+                90% {transform: skew(0deg, 0deg);}
+                to {transform: skew(0deg, 0deg);}
+            }
+
+            @-webkit-keyframes anim2
+            {
+                from {left: 0px;   -webkit-transform: scale(1.0) rotate(0deg)   }
+                50%  {left: 250px; -webkit-transform: scale(0.8) rotate(10deg)  }
+                to   {left: 500px; -webkit-transform: scale(1.2) rotate(-20deg) }
+            }
+        </style>
+        <style type="text/css">
+            body{
+                background-color: #1f9ee5;
+            }
+
+            .background {
+                height: 130px;
+                width: 244px;
+                background: url(img/screen-overview.jpg) 0 0 no-repeat;
+                position: relative;
+                top:-115px;
+            }
+            #foxtail {
+                background: url(general/img/foxtail.png) 0 0 no-repeat;
+                width: 156px;
+                height: 156px;
+                top: 90px;
+                left: 30px;
+                position: absolute;
+            }
+            /* animacion */
+            @keyframes animate-tail {  
+                0% {background-position: -6864px 0; }
+                100% {background-position: 0 0;}
+            }
+            #foxtail {
+                animation: animate-tail 3.75s steps(44) infinite;
+            }	
+        </style>
+
     </head>
     <body>
-        <div>Curso Firefox Os v4 - Miriadax - gastonnina - Homework</div>
+    <center>
+        <img src="general/img/miriadax.png" style=" animation: 2.67s ease-in-out 0s normal none infinite running demo-skew;">
+        <div class="background">
+            <div id="foxtail"></div>
+
+        </div>
+        <br />
+
+
+
+        <h1 style="color: white;">Curso Firefox Os v4 - Miriadax</h1>
+        <h2 style="color: #000; 	text-shadow: 2px 2px 19px #fff;">@gastonnina</h2>
         <ul>
             <li> <a href="modulo_02/obligatorio_02/pagina1.html">Obligatorio 2</a></li>
         </ul>
-    </body>
+    </center>
+
+    <!-- Soporte para browsers obsoletos -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="general/js/jquery.spritely.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery("#foxtail").sprite({fps: 12, no_of_frames: 44, rewind: true});
+        });
+    </script>
+</body>
 </html>
